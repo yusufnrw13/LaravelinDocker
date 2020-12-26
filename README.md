@@ -5,3 +5,6 @@ Jadi langkah pertama ini kita akan melakukan build aplikasi laravel kita bersert
 <b>docker-compose build app</b>
 <img src="https://github.com/yusufnrw13/LaravelinDocker/blob/master/Screenshot_1.png" />
 <h2>Langkah 2 : Environment File</h2>
+Membuat environment file untuk menjalankan container dengan perintah berikut ini :
+<b>docker-compose up -d</b>
+<img src="https://github.com/yusufnrw13/LaravelinDocker/blob/master/Screenshot_2.png"/>
