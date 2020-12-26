@@ -3,7 +3,7 @@ Pada repository github ini akan membuat tutorial melakukan build web laravel den
 <h2>Langkah 1 : Membuat file Dockerfile</h2>
 Berikut adalah script dari Dockerfile pada web laravel kita
 <img src="https://github.com/yusufnrw13/LaravelinDocker/blob/master/Screenshot_8.png"/>
-<h2>Langkah 2: Membuat file Docker-compose.yml
+<h2>Langkah 2: Membuat file Docker-compose.yml</h2>
 Berikut adalah script dari Docker-compose.yml pada web laravel kita
 <img src="https://github.com/yusufnrw13/LaravelinDocker/blob/master/Screenshot_9.png"/>
 <h2>Langkah 3 : Building App</h2>
