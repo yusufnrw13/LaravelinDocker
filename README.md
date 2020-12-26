@@ -2,10 +2,10 @@
 Pada repository github ini akan membuat tutorial melakukan build web laravel dengan database mysql dan webserver nginx yang akan dijalankan dengan docker.
 <h2>Langkah 1 : Membuat file Dockerfile</h2>
 Berikut adalah script dari Dockerfile pada web laravel kita
-<img src=""/>
+<img src="https://github.com/yusufnrw13/LaravelinDocker/blob/master/Screenshot_8.png"/>
 <h2>Langkah 2: Membuat file Docker-compose.yml
 Berikut adalah script dari Docker-compose.yml pada web laravel kita
-<img src=""/>
+<img src="https://github.com/yusufnrw13/LaravelinDocker/blob/master/Screenshot_9.png"/>
 <h2>Langkah 3 : Building App</h2>
 Jadi langkah ketiga ini kita akan melakukan build aplikasi laravel kita berserta database mysql dan webserver nginx dengan perintah berikut ini :
 <b>docker-compose build app</b>
