@@ -28,4 +28,4 @@ Membuat key generate untuk enkripsi. Untuk melakukan key generate gunakan perint
 <img src="https://github.com/yusufnrw13/LaravelinDocker/blob/master/Screenshot_7.png"/>
 <h2>Langkah 7 : Menjalankan aplikasi</h2>
 Website yang saya buat disini adalah web crud untuk memasukkan data buku. dibawah ini adalah tampilan data buku yang sudah di inputkan.
-<img src="https://github.com/yusufnrw13/LaravelinDocker/blob/master/Screenshot_7.png"/>
+<img src="https://github.com/yusufnrw13/LaravelinDocker/blob/master/Screenshot_10.png"/>
