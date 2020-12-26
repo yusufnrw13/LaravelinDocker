@@ -22,3 +22,6 @@ Jika ingin melihatnya di cmd gunakan perintah berikut ini untuk melihat containe
 Kita akan melakukan instalasi composer yang akan digunakan untuk melakukan eksekusi aplikasi laravel dengan composer. Untuk melakukan instalasi ketikkan perintah berikut ini :
 <b>docker-compose exec app composer install</b>
 <img src="https://github.com/yusufnrw13/LaravelinDocker/blob/master/Screenshot_6.png"/>
+<h2>Langkah 6 : Key generate</h2>
+Membuat key generate untuk enkripsi. Untuk melakukan key generate gunakan perintah berikut ini :
+<b>docker-compose exec app php artisan key:generate</b>
