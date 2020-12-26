@@ -26,3 +26,6 @@ Kita akan melakukan instalasi composer yang akan digunakan untuk melakukan eksek
 Membuat key generate untuk enkripsi. Untuk melakukan key generate gunakan perintah berikut ini :
 <b>docker-compose exec app php artisan key:generate</b>
 <img src="https://github.com/yusufnrw13/LaravelinDocker/blob/master/Screenshot_7.png"/>
+<h2>Langkah 7 : Menjalankan aplikasi</h2>
+Website yang saya buat disini adalah web crud untuk memasukkan data buku. dibawah ini adalah tampilan data buku yang sudah di inputkan.
+<img src="https://github.com/yusufnrw13/LaravelinDocker/blob/master/Screenshot_7.png"/>
