@@ -35,4 +35,10 @@ Membuat key generate untuk enkripsi. Untuk melakukan key generate gunakan perint
 <img src="https://github.com/yusufnrw13/LaravelinDocker/blob/master/Screenshot_12.png"/>
 <b>- Tampilan website mengedit data</b>
 <img src="https://github.com/yusufnrw13/LaravelinDocker/blob/master/Screenshot_13.png"/>
+<h2>Langkah 8 : Deploy ke docker hub</h2>
+Setelah berhasil menjalankan website laravel beserta database nya di docker selanjutnya kita akan melakukan push ke docker hub. pada docker hub kita akan membuat 3 repository untuk masing-masing image yakni aplikasi laravel kita, database mysql dan webserver nginx seperti berikut ini :
+<img src="https://github.com/yusufnrw13/LaravelinDocker/blob/master/Screenshot_14.png"/>
+<img src="https://github.com/yusufnrw13/LaravelinDocker/blob/master/Screenshot_15.png"/>
+<img src="https://github.com/yusufnrw13/LaravelinDocker/blob/master/Screenshot_16.png"/>
+<img src="https://github.com/yusufnrw13/LaravelinDocker/blob/master/Screenshot_17.png"/>
 
