@@ -3,4 +3,4 @@ Pada repository github ini akan membuat tutorial melakukan build web laravel den
 <h2>Langkah 1 : Building App</h2>
 Jadi langkah pertama ini kita akan melakukan build aplikasi laravel kita berserta database mysql dan webserver nginx dengan perintah berikut ini :
 <b>docker-compose build app</b>
-![alt text](https://github.com/yusufnrw13/LaravelinDocker/Screenshot_1.png?raw=true)
+(https://github.com/yusufnrw13/LaravelinDocker/blob/master/Screenshot_1.png?raw=true)
