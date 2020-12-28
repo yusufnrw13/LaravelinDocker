@@ -1,0 +1,89 @@
+version: "3.7"
+//mengedit node layanan untuk menyertakan layanan app, db, dan nginx.
+services:
+  app:
+    build:
+      args:
+        user: yusuf
+        uid: 1000
+      context: ./
+      dockerfile: Dockerfile
+
+//build: Konfigurasi ini memberi tahu Docker Compose untuk membuat image lokal untuk layanan aplikasi,
+menggunakan jalur yang ditentukan (konteks) dan Dockerfile untuk mendapatkan petunjuk. 
+Argumen user dan uid dimasukkan ke dalam Dockerfile untuk menyesuaikan perintah pembuatan pengguna pada waktu pembuatan.
+
+    image: perpus
+//image: Nama yang akan digunakan untuk image yang sedang dibangun.
+    container_name: perpus-app
+//container_name: Menyiapkan nama container untuk layanan ini.
+    restart: unless-stopped
+//restart: Selalu restart, kecuali layanan dihentikan.
+    working_dir: /var/www/
+//working_dir: Setel direktori default untuk layanan ini sebagai / var / www.
+    volumes:
+      - ./:/var/www
+//volume: Membuat volume bersama yang akan menyinkronkan konten dari direktori saat ini ke / var / www di dalam penampung. 
+    networks:
+      - perpus
+//jaringan: Menyiapkan layanan ini untuk menggunakan jaringan bernama perpus.
+
+  db:
+    image: mysql:5.7
+//image: Mendefinisikan image Docker yang harus digunakan untuk container ini. 
+Dalam hal ini, menggunakan gambar MySQL 5.7 dari Docker Hub.
+    container_name: perpus-db
+//container_name: Menyiapkan nama container untuk layanan ini: perpus-db.
+    restart: unless-stopped
+//restart: Selalu restart layanan ini, kecuali jika dihentikan secara eksplisit.
+    environment:
+      MYSQL_DATABASE: perpustakaanyusuf
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_PASSWORD: 
+      MYSQL_USER: root
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+//Mendefinisikan variabel lingkungan di penampung baru.menggunakan nilai yang 
+diperoleh dari file .env Laravel untuk menyiapkan layanan MySQL, yang secara 
+otomatis akan membuat database dan pengguna baru berdasarkan variabel lingkungan yang disediakan.
+    volumes:
+      - ./docker-compose/mysql:/docker-entrypoint-initdb.d
+//volume: Membuat volume untuk berbagi dump database .sql yang akan digunakan untuk 
+menginisialisasi database aplikasi. image MySQL akan secara otomatis mengimpor file .sql 
+yang ditempatkan di direktori /docker-entrypoint-initdb.d di dalam container.
+    ports:
+      - "5001:3306"
+    networks:
+      - perpus
+//Menyiapkan layanan ini untuk menggunakan jaringan bernama perpus.
+
+  nginx:
+    image: nginx:alpine
+//image: Mendefinisikan image Docker yang harus digunakan untuk container ini. 
+    container_name: perpus-nginx
+//container_name: Menyiapkan nama container untuk layanan ini: perpus-nginx.
+    restart: unless-stopped
+//restart: Selalu restart layanan ini, kecuali jika dihentikan secara eksplisit.
+    ports:
+      - "5000:80"
+//port: Menyiapkan pengalihan port yang akan memungkinkan akses eksternal 
+melalui port 8000 ke server web yang berjalan pada port 80 di dalam penampung.
+    volumes:
+      - ./:/var/www
+      - ./docker-compose/nginx:/etc/nginx/conf.d
+//volume: Membuat dua volume bersama. Yang pertama akan menyinkronkan konten dari 
+direktori saat ini ke / var / www di dalam penampung. Dengan cara ini, saat Anda 
+membuat perubahan lokal pada file aplikasi, perubahan tersebut akan dengan cepat 
+tercermin dalam aplikasi yang dilayani oleh Nginx di dalam container. Volume kedua 
+akan memastikan file konfigurasi Nginx kita, yang terletak 
+di docker-compose / nginx / perpus.conf, disalin ke folder konfigurasi Nginx container.
+    networks:
+      - perpus
+//Menyiapkan layanan ini untuk menggunakan jaringan bernama perpus.
+
+networks:
+  perpus:
+    driver: bridge
+Layanan aplikasi akan menyiapkan wadah bernama perpus-app. 
+Itu membangun image Docker baru berdasarkan Dockerfile yang 
+terletak di jalur yang sama dengan file docker-compose.yml. 

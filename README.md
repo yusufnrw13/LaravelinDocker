@@ -1,48 +1,61 @@
-# Laravel in Docker
-Pada repository github ini akan membuat tutorial melakukan build web laravel dengan database mysql dan webserver nginx yang akan dijalankan dengan docker.
-<h2>Langkah 1 : Membuat file Dockerfile</h2>
-Berikut adalah script dari Dockerfile pada web laravel kita
-<img src="https://github.com/yusufnrw13/LaravelinDocker/blob/master/Screenshot_8.png"/>
-<h2>Langkah 2: Membuat file Docker-compose.yml</h2>
-Berikut adalah script dari Docker-compose.yml pada web laravel kita
-<img src="https://github.com/yusufnrw13/LaravelinDocker/blob/master/Screenshot_9.png"/>
-<h2>Langkah 3 : Building App</h2>
-Jadi langkah ketiga ini kita akan melakukan build aplikasi laravel kita berserta database mysql dan webserver nginx dengan perintah berikut ini :
-<b>docker-compose build app</b>
-<img src="https://github.com/yusufnrw13/LaravelinDocker/blob/master/Screenshot_1.png" />
-<h2>Langkah 4 : Environment File</h2>
-Membuat environment file untuk menjalankan container dengan perintah berikut ini :
-<b>docker-compose up -d</b>
-<img src="https://github.com/yusufnrw13/LaravelinDocker/blob/master/Screenshot_2.png"/>
-<h2>Langkah 4 : Melihat container yang sudah di jalankan pada docker desktop</h2>
-<img src="https://github.com/yusufnrw13/LaravelinDocker/blob/master/Screenshot_4.png"/>
-Jika ingin melihatnya di cmd gunakan perintah berikut ini untuk melihat container yang sedang berjalan :
-<b>docker-compose ps</b>
-<h2>Langkah 5 : Melakukan instal composer</h2>
-Kita akan melakukan instalasi composer yang akan digunakan untuk melakukan eksekusi aplikasi laravel dengan composer. Untuk melakukan instalasi ketikkan perintah berikut ini :
-<b>docker-compose exec app composer install</b>
-<img src="https://github.com/yusufnrw13/LaravelinDocker/blob/master/Screenshot_6.png"/>
-<h2>Langkah 6 : Key generate</h2>
-Membuat key generate untuk enkripsi. Untuk melakukan key generate gunakan perintah berikut ini :
-<b>docker-compose exec app php artisan key:generate</b>
-<img src="https://github.com/yusufnrw13/LaravelinDocker/blob/master/Screenshot_7.png"/>
-<h2>Langkah 7 : Menjalankan aplikasi</h2>
-<b>- Website yang saya buat disini adalah web crud untuk memasukkan data buku. dibawah ini adalah tampilan data buku yang sudah di inputkan.</b>
-<img src="https://github.com/yusufnrw13/LaravelinDocker/blob/master/Screenshot_10.png"/>
-<b>- Tampilan website menginputkan data</b>
-<img src="https://github.com/yusufnrw13/LaravelinDocker/blob/master/Screenshot_11.png"/>
-<b>- Tampilan website menampilkan data</b>
-<img src="https://github.com/yusufnrw13/LaravelinDocker/blob/master/Screenshot_12.png"/>
-<b>- Tampilan website mengedit data</b>
-<img src="https://github.com/yusufnrw13/LaravelinDocker/blob/master/Screenshot_13.png"/>
-<h2>Langkah 8 : Deploy ke docker hub</h2>
-Setelah berhasil menjalankan website laravel beserta database nya di docker selanjutnya kita akan melakukan push ke docker hub. pada docker hub kita akan membuat 3 repository untuk masing-masing image yakni aplikasi laravel kita, database mysql dan webserver nginx seperti berikut ini :
-<img src="https://github.com/yusufnrw13/LaravelinDocker/blob/master/Screenshot_14.png"/>
-<img src="https://github.com/yusufnrw13/LaravelinDocker/blob/master/Screenshot_15.png"/>
-<img src="https://github.com/yusufnrw13/LaravelinDocker/blob/master/Screenshot_16.png"/>
-<img src="https://github.com/yusufnrw13/LaravelinDocker/blob/master/Screenshot_17.png"/>
-<h2>Langkah 9 : Melihat repository pada docker hub</h2>
-Disini kita akan melihat 3 repository yang masing-masing berisi image
-<img src="https://github.com/yusufnrw13/LaravelinDocker/blob/master/Screenshot_18.png"/>
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
+<p align="center">
+<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+</p>
 
+## About Laravel
+
+Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+
+- [Simple, fast routing engine](https://laravel.com/docs/routing).
+- [Powerful dependency injection container](https://laravel.com/docs/container).
+- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+- [Robust background job processing](https://laravel.com/docs/queues).
+- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+
+Laravel is accessible, powerful, and provides tools required for large, robust applications.
+
+## Learning Laravel
+
+Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+
+If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+
+## Laravel Sponsors
+
+We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+
+### Premium Partners
+
+- **[Vehikl](https://vehikl.com/)**
+- **[Tighten Co.](https://tighten.co)**
+- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
+- **[64 Robots](https://64robots.com)**
+- **[Cubet Techno Labs](https://cubettech.com)**
+- **[Cyber-Duck](https://cyber-duck.co.uk)**
+- **[Many](https://www.many.co.uk)**
+- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
+- **[DevSquad](https://devsquad.com)**
+- **[OP.GG](https://op.gg)**
+
+## Contributing
+
+Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+
+## Code of Conduct
+
+In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+
+## Security Vulnerabilities
+
+If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+
+## License
+
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
