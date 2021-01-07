@@ -45,4 +45,10 @@ Setelah berhasil menjalankan website laravel beserta database nya di docker sela
 Disini kita akan melihat 3 repository yang masing-masing berisi image
 <img src="https://github.com/yusufnrw13/LaravelinDocker/blob/master/Screenshot_18.png"/>
 
+<h2>Link repository pada docker hub</h2>
+https://hub.docker.com/repository/docker/yusufnrw/laravelindocker
+
+https://hub.docker.com/repository/docker/yusufnrw/dockermysql
+
+https://hub.docker.com/repository/docker/yusufnrw/dockerwebserver
 
